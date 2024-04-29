@@ -137,6 +137,43 @@ sqlite (linux, osx) sqlite:///absolute/path/to/database
 sqLite (windows) sqlite:///absolute\path\to\database
 fonte: https://flask-sqlalchemy.palletsprojects.com/en/2.x/config/
 
+## Configuração
+
+### banco de dados | configuração
+##### importa os pacotes necessários.
+import os
+from flask_sqlalchemy import SQLAlchemy
+banco de dados | configuração
+##### importa os pacotes necessários.
+import os
+from flask_sqlalchemy import SQLAlchemy
+##### pega o diretório base da aplicação a partir da
+##### constante __file__.
+basedir = os.path.dirname(__file__)
+banco de dados | configuração
+##### importa os pacotes necessários.
+import os
+from flask_sqlalchemy import SQLAlchemy
+##### pega o diretório base da aplicação a partir da
+##### constante __file__.
+basedir = os.path.abspath(os.path.dirname(__file__)
+##### define a URI de conexão para o banco de dados.
+app = Flask(__name__)
+app.config[‘SQLALCHEMY_DATABASE_URI’] =\
+‘sqlite:///’ + os.path.join(basedir, ‘database.sqlite’)
+banco de dados | configuração
+##### importa os pacotes necessário.
+import os
+from flask_sqlalchemy import SQLAlchemy
+##### define a URI de conexão para o banco de dados.
+app = Flask(__name__)
+app.config[‘SQLALCHEMY_DATABASE_URI’] =\
+‘sqlite:///’ + os.path.join(basedir, ‘database.sqlite’)
+##### pega o diretório base da aplicação a partir da
+##### constante __file__.
+basedir = os.path.abspath(os.path.dirname(__file__)
+##### instancia o objeto SQLAlchemy para representar o banco de dados.
+db = SQLAlchemy(app)
 
 ### How to run flask learning project:
 1- flask run or flask run --reload
