@@ -105,6 +105,9 @@ execução
 <h2>Anônimo!</h2>
 {% endif %}
 
+### templates | dry | blocos
+
+sintaxe: {% block {blockname} %}
+*os caracteres "{}" não constam na sintaxe
 How to run flask learning project:
 1- flask run or flask run --reload
-
