@@ -111,5 +111,17 @@ sintaxe:
 {% block {blockname} %}
 {% endblock %}
 *os caracteres "{}" não constam na sintaxe
-How to run flask learning project:
+
+
+### bootstrap | integração com o flask
+pip install flask-bootstrap
+
+### importa a classe Bootstrap em um arquivo Python.
+
+#### app.py
+from flask_bootstrap import Bootstrap
+app = Flask(__name__)
+boostrap = Boostrap(app)
+
+### How to run flask learning project:
 1- flask run or flask run --reload
