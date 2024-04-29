@@ -306,5 +306,15 @@ db.Column(“actor_id”, db.Integer, db.ForeignKey(“actor.id”)),
 db.Column(“movie_id”, db.Interger, db.ForeignKey(“movie.id”)),
 )
 
+## instalando a extensão flask-migrate
+(venv) c:\todo> pip install flask-migrate
+
+## usando flask-migrate
+#### app.py
+from flask_migrate import Migrate
+#### ...
+migrate = Migrate(app, db)
+
+
 ### How to run flask learning project:
 1- flask run or flask run --reload
