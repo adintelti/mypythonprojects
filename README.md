@@ -123,5 +123,8 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 boostrap = Boostrap(app)
 
+#### inicie a página da application com isso
+{% extends “boostrap/base.html %}”
+
 ### How to run flask learning project:
 1- flask run or flask run --reload
