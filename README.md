@@ -315,6 +315,10 @@ from flask_migrate import Migrate
 #### ...
 migrate = Migrate(app, db)
 
+## comandos flask-migrate
+flask db init - suporte a migrações de banco de dados
+flask db migrate –m ”initial migration” - cria um script de migração automática
+flask db upgrade - aplica o script de migração no banco de dados
 
 ### How to run flask learning project:
 1- flask run or flask run --reload
