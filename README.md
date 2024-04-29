@@ -211,5 +211,100 @@ nullable = False, não permitirá valores nulos para a coluna.
 default = valor, define um valor padrão para a coluna.
 fonte: https://docs.sqlalchemy.org/en/14/
 
+## modelo | opções de relacionamentos
+opção descrição
+backref adiciona uma referência para trás no outro modelo de
+relacionamento.
+primaryjoin especifica a condição de junção entre dois modelos
+explicitamente. É necessários em relacionamentos ambíguos.
+order_by especifica a ordem usada para os itens no relacionamento.
+fonte: https://docs.sqlalchemy.org/en/14/
+
+### modelo | relacionamento 1:1
+
+#### definição da classe modelo Director.
+class Director (db.Model):
+__tablename__ = ‘directors’
+#### representa um objeto como string.
+def __repr__(self):
+return f”Director #{self.id}: {self.name}”
+#### definição dos atributos do modelo.
+id = db.Column(db.Integer, primary_key=True)
+name = db.Column(db.String(45), nullable=False)
+#### ...
+address = db.relationship(‘Address’, backref=‘director’)
+modelo | relacionamento 1:1
+#### definição da classe modelo Address.
+class Address (db.Model):
+__tablename__ = ‘addresses’
+#### representa um objeto como string.
+def __repr__(self):
+return f”Address #{self.id}: {self.street}”
+#### definição dos atributos do modelo.
+id = db.Column(db.Integer, primary_key=True)
+street = db.Column(db.String(120), nullable=True)
+...
+#### relacionamento com o modelo Director
+director_id = db.Column(‘Director’, db.ForeignKey(‘directors.id’))
+modelo | relacionamento 1:N
+modelo | relacionamento 1:N
+#### definição da classe modelo Director.
+class Director (db.Model):
+__tablename__ = ‘directors’
+#### representa um objeto como string.
+def __repr__(self):
+return f”Director #{self.id}: {self.name}”
+#### definição dos atributos do modelo.
+id = db.Column(db.Integer, primary_key=True)
+name = db.Column(db.String(45), nullable=False)
+...
+movies = db.relationship(‘Movie’, backref=‘director’)
+modelo | relacionamento 1:N
+#### definição da classe modelo Movie.
+class Movie (db.Model):
+__tablename__ = ‘movies’
+#### representa um objeto como string.
+def __repr__(self):
+return f”Movie #{self.id}: {self.title}”
+#### definição dos atributos do modelo.
+id = db.Column(db.Integer, primary_key=True)
+title = db.Column(db.String(45), nullable=True)
+...
+#### relacionamento com o modelo Director
+director_id = db.Column(db.Integer, db.ForeignKey(‘directors.id’))
+modelo | relacionamento N:N
+modelo | relacionamento N:N
+casts = db.Table(
+“casts”,
+db.Column(“actor_id”, db.Integer, db.ForeignKey(“actors.id”)),
+db.Column(“movie_id”, db.Interger, db.ForeignKey(“movies.id”)),
+)
+modelo | relacionamento N:N
+#### definição da classe modelo Movie.
+class Movie (db.Model):
+__tablename__ = ‘movies’
+#### ...
+actors = db.relationship("Actor", secondary=casts)
+casts = db.Table(
+“casts”,
+db.Column(“actor_id”, db.Integer, db.ForeignKey(“actor.id”)),
+db.Column(“movie_id”, db.Interger, db.ForeignKey(“movie.id”)),
+)
+modelo | relacionamento N:N
+#### definição da classe modelo Actor.
+class Actor(db.Model):
+id = db.Column(db.Integer, primary_key=True)
+movies = db.relationship(“Movie", secondary=casts)
+#### definição da classe modelo Movie.
+class Movie (db.Model):
+__tablename__ = ‘movies’
+#### ...
+actors = db.relationship("Actor", secondary=casts)
+actors = db.Table(
+“actors”,
+db.Column(“actor_id”, db.Integer, db.ForeignKey(“actor.id”)),
+db.Column(“movie_id”, db.Interger, db.ForeignKey(“movie.id”)),
+)
+
 ### How to run flask learning project:
 1- flask run or flask run --reload
