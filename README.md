@@ -126,5 +126,17 @@ boostrap = Boostrap(app)
 #### inicie a página da application com isso
 {% extends “boostrap/base.html %}”
 
+## banco de dados | sqlalchemy
+## banco de dados | flask-sqlalchemy
+  wrapper para o sqlalchemy
+### banco de dados | string de conexão
+engine url
+mysql mysql://username:password@hostname/database
+postgres postgresql://username:password@hostname/database
+sqlite (linux, osx) sqlite:///absolute/path/to/database
+sqLite (windows) sqlite:///absolute\path\to\database
+fonte: https://flask-sqlalchemy.palletsprojects.com/en/2.x/config/
+
+
 ### How to run flask learning project:
 1- flask run or flask run --reload
