@@ -107,7 +107,9 @@ execução
 
 ### templates | dry | blocos
 
-sintaxe: {% block {blockname} %}
+sintaxe: 
+{% block {blockname} %}
+{% endblock %}
 *os caracteres "{}" não constam na sintaxe
 How to run flask learning project:
 1- flask run or flask run --reload
