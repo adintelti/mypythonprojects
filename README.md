@@ -1,19 +1,19 @@
-Dev environment:
+# Dev environment:
 ▪ python >= 3.6.* {flask depends on it}
 ▪ visual code {IDE for development}
 ▪ python microsoft extension for visual code
 
-python download:
+# python download:
 https://www.python.org/downloads/
 
-python installation:
+## python installation:
 ![image](https://github.com/adintelti/mypythonprojects/assets/155258727/e622e251-ddeb-4ff2-af12-01f2c3846fc1)
 ![image](https://github.com/adintelti/mypythonprojects/assets/155258727/9e8c3c6c-5c1a-452c-aec5-37def64c9341)
 
-python extension for vscode:
+## python extension for vscode:
 ![image](https://github.com/adintelti/mypythonprojects/assets/155258727/2fa6191d-840a-4f58-8ee8-696023cc3af7)
 
-command to check installed python version:
+### command to check installed python version:
 python --version
 
 # setup for a new flask project(run the following commands)
@@ -32,7 +32,7 @@ c:\> pip install Flask
 
 # Coding:
 
-using flask:
+## using flask:
 from flask import Flask
 
 templates | placeholders
