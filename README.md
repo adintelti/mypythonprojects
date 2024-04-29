@@ -320,5 +320,12 @@ flask db init - suporte a migrações de banco de dados
 flask db migrate –m ”initial migration” - cria um script de migração automática
 flask db upgrade - aplica o script de migração no banco de dados
 
+## usings importantes
+import os
+from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+
 ### How to run flask learning project:
 1- flask run or flask run --reload
