@@ -175,5 +175,41 @@ basedir = os.path.abspath(os.path.dirname(__file__)
 ##### instancia o objeto SQLAlchemy para representar o banco de dados.
 db = SQLAlchemy(app)
 
+## banco de dados | modelo
+manipula os dados, a lógica
+e as regras de negócios da
+aplicação
+banco de dados | modelo
+#### definição da classe do modelo Post.
+class Post (db.Model):
+__tablename__ = ‘posts’
+banco de dados | modelo
+#### definição da classe modelo Post.
+class Post (db.Model):
+__tablename__ = ‘posts’
+#### definição dos atributos do modelo.
+id = db.Column(db.Integer, primary_key=True)
+title = db.Column(db.String(256), nullable=False)
+body = db.Column(db.String(1024), nullable=False)
+banco de dados | modelo
+#### definição da classe modelo Post.
+class Post (db.Model):
+__tablename__ = ‘posts’
+#### representa um objeto como string.
+def __repr__(self):
+return f”Post #{self.id}: {self.title}”
+#### definição dos atributos do modelo.
+id = db.Column(db.Integer, primary_key=True)
+title = db.Column(db.String(256), nullable=False)
+body = db.Column(db.String(1024), nullable=False)
+modelo | opções de colunas
+opção descrição
+primary_key = True, a coluna será chave primária da tabela.
+unique = True, não permitirá valores duplicados na coluna.
+index = True, um índice será criado para a coluna.
+nullable = False, não permitirá valores nulos para a coluna.
+default = valor, define um valor padrão para a coluna.
+fonte: https://docs.sqlalchemy.org/en/14/
+
 ### How to run flask learning project:
 1- flask run or flask run --reload
