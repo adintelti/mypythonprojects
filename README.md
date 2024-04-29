@@ -58,6 +58,24 @@ função tratadora. Diversos pares
 (placeholder-valor) podem ser passados
 na função render_template.
 
+### templates | filtro
+modifica o conteúdo de uma variável no
+template, aplicado após o nome da
+variável com o caractere “|”
+
+templates | filtros
+nome descrição
+capitalize - converte o primeiro caractere para letra maiúscula.
+lower - converte todas as letras para minúsculas.
+upper - converte todas as letras para maiúsculas.
+trim - remove espaços em branco no início e no final do valor.
+striptags -  remove qualquer tag HTML do valor.
+fonte: https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters
+
+## exemplo
+templates | filtros
+### templates/user.html
+<h2>{{ name|upper }}</h2>
 
 How to run flask learning project:
 1- flask run or flask run --reload
