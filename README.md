@@ -98,7 +98,7 @@ execução
 
 ### exemplo
 
-# templates/user.html
+### templates/user.html
 {% if name %}
 <h2>{{ name|upper }}</h2>
 {% else %}
