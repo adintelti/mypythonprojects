@@ -63,7 +63,7 @@ modifica o conteúdo de uma variável no
 template, aplicado após o nome da
 variável com o caractere “|”
 
-templates | filtros
+### templates | filtros
 nome descrição
 capitalize - converte o primeiro caractere para letra maiúscula.
 lower - converte todas as letras para minúsculas.
@@ -76,6 +76,34 @@ fonte: https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters
 templates | filtros
 ### templates/user.html
 <h2>{{ name|upper }}</h2>
+
+### templates | estruturas de controle
+
+instruções que alteram o fluxo de
+execução
+
+### templates | estrutura de controle if
+{% if expressão lógica %}
+...
+{% else %}
+...
+{% endif %}
+
+### templates | estrutura de controle if
+{% if expressão lógica %}
+...
+{% else %}
+...
+{% endif %}
+
+### exemplo
+
+# templates/user.html
+{% if name %}
+<h2>{{ name|upper }}</h2>
+{% else %}
+<h2>Anônimo!</h2>
+{% endif %}
 
 How to run flask learning project:
 1- flask run or flask run --reload
