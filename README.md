@@ -325,7 +325,7 @@ import os
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
+from flask import Flask, render_template, request, redirect
 
 ### How to run flask learning project:
 1- flask run or flask run --reload
